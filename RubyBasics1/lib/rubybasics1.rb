@@ -25,5 +25,15 @@ end
 
 # Part III
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  if arr.length == 1
+    return false
+  end
+  arr.each do |x|
+    arr.each do |y|
+      if (x+y == n) && x != y
+        return true
+      end
+    end
+  end
+  return false
 end
