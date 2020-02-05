@@ -16,5 +16,9 @@ end
 
 # Part III
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  if s.match(/^0?(10)*0+$/)
+    return true
+  else
+    return false
+  end
 end
