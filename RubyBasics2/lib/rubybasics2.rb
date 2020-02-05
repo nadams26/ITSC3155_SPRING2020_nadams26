@@ -7,7 +7,11 @@ end
 
 # Part II
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  if s.match(/^[b-ef-hj-np-tv-zB-EF-HJ-NP-TV-Z]+/)
+    return true
+  else
+    return false
+  end
 end
 
 # Part III
