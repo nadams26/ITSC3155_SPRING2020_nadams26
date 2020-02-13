@@ -17,7 +17,30 @@ module FunWithStrings
     return hash
   end
   def anagram_groups
-    # your code here
+    words = []
+    anagrams = []
+    (self.downcase.gsub(/[^a-z ]/, "").split(" ")).each do |x|
+      words << x
+    end
+    contains = false;
+    words.each do |x|
+      anagrams.each do |y|
+        y.each do |z|
+          if z.chars.sort.join == x.chars.sort.join
+            contains = true
+          end
+        end
+        if(contains == true)
+          y << x
+        end
+        contains = false
+      end
+      if contains == false
+        anagrams << [x]
+      end
+      contains = false
+    end 
+    return anagrams
   end
 end
 
